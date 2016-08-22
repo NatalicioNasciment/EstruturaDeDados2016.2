@@ -5,6 +5,7 @@ public class Produto {
 	private String nome;
 	private long estoque;
 	private double preco;
+	private String categoria;
 	
 	public Produto(){}
 	public Produto(int cod,String nome,long quant ,double preco){
