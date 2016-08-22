@@ -1,6 +1,7 @@
 package exercicio01;
+
 /*
- * Considere um cadastro de produtos de um estoque, com as seguintes
+ *Considere um cadastro de produtos de um estoque, com as seguintes
 informações para cada produto:
 ● Codigo de identificação do produto: representado por um valor inteiro
 ● Nome do produto: com ate 50 caracteres
@@ -16,60 +17,36 @@ função. Essa função deve ter o seguinte protótipo ou constrututor:
 struct produto* cria (mt cod, char* nome, mt quant, float preco);
 public produto(int cod, String nome, long quant, double preco);
 3)Proponha demais atributos e operações aplicáveis a um produto.
- */
+ * */
 
-public class Produto {
-	private int cod;
-	private String nome;
-	private long estoque;
-	private double preco;
+public class Endereco {
+	private String num;
+	private String cidade;
+	private String bairro;
+	private String estado;
 	
-	
-	public Produto(){}
-	public Produto(int cod,String nome,long quant ,double preco){
-		this.setCod(cod);
-		this.setNome(nome);
-		this.setEstoque(quant);
-		this.setPreco(preco);
-	}	
-	
-	public int getCod() {
-		return cod;
+	public Endereco(){}
+	public Endereco(String estado, String cidade, String bairro, String num){
+		this.setEstado(estado);
+		this.setCidade(cidade);
+		this.setBairro(bairro);
+		this.setNum(num);
+	}
+	public void setNum(String num) {
+		this.num = num;
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 
-	public void setCod(int cod) {
-		this.cod = cod;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public long getEstoque() {
-		return estoque;
-	}
-
-	public void setEstoque(long quant) {
-		this.estoque = quant;
-	}
-
-	public double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(double preco) {
-		this.preco = preco;
+	public String getExibirEnderecoProduto(){
+		return  estado + " " + cidade + " " + bairro + " " + num;
 	}
 	
-	public String solicitarEndereco(Endereco endereco){
-		return endereco.getExibirEnderecoProduto();
-	}
-	
-	
-	
-
 }
