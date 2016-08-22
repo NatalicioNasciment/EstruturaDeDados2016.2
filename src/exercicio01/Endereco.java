@@ -18,7 +18,6 @@ struct produto* cria (mt cod, char* nome, mt quant, float preco);
 public produto(int cod, String nome, long quant, double preco);
 3)Proponha demais atributos e operações aplicáveis a um produto.
  * */
-
 public class Endereco {
 	private String num;
 	private String cidade;
@@ -41,12 +40,10 @@ public class Endereco {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 	public String getExibirEnderecoProduto(){
 		return  estado + " " + cidade + " " + bairro + " " + num;
 	}
-	
 }
