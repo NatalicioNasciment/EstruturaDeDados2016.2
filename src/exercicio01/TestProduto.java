@@ -1,6 +1,6 @@
 package exercicio01;
 
-public class TestExercicio01 {
+public class TestProduto {
 	public static void main(String[] args) {
 		
 		Produto leite = new Produto(111, "Leite Desnatado", 10, 4.10);

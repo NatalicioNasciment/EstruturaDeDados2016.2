@@ -6,8 +6,8 @@ de operação, número de visitas que é capaz de realizar em um dia e atributos
 como: marca, modelo, ano, etc.
  * */
 public class Veiculos {
-	private static final int CAPACIDADELIMITE = 20000;// a unidade de medida adotada é KG
-	private static final int LIMITETEMPO = 1;// a unidade de tempo é a HORA.
+	private static final int CAPACIDADE_LIMITE = 20000;// a unidade de medida adotada é KG
+	private static final int LIMITE_TEMPO = 6;// a unidade de tempo é a HORA.
 	private String marca;
 	private String modelo;
 	private int ano;
@@ -23,10 +23,10 @@ public class Veiculos {
 		this.setModelo(modelo);
 		this.setAno(ano);
 	}
-
-	public Veiculos(float capacidade, int limiteTempo, int numVisitas) {
+	
+	public Veiculos(float capacidade, int tempo, int numVisitas) {
 		this.setCapacidade(capacidade);
-		this.setTempo(limiteTempo);
+		this.setTempo(tempo);
 		this.setNumVisitas(numVisitas);
 	}
 
@@ -55,7 +55,7 @@ public class Veiculos {
 	}
 
 	public float getCapacidade() {
-		if (capacidade <= CAPACIDADELIMITE) {
+		if (capacidade <= CAPACIDADE_LIMITE) {
 			return capacidade;
 		} else {
 			return -1;
@@ -75,7 +75,11 @@ public class Veiculos {
 	}
 
 	public int getNumVisitas() {
-		return numVisitas;
+		if( (tempo) * numVisitas <= 24){
+			return numVisitas;
+		}else{
+			return -1;
+		}
 	}
 
 	public void setNumVisitas(int numVisitas) {
