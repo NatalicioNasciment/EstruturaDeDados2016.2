@@ -1,8 +1,7 @@
 package exercicio01;
 
 public class TestProduto {
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		Produto leite = new Produto(111, "Leite Desnatado", 10, 4.10);
 		Endereco  enderecoLeite = new Endereco("CE", "SGA", "Parada", "S/N");
 		
