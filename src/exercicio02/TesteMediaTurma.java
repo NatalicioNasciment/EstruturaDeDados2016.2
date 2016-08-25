@@ -11,7 +11,7 @@ public class TesteMediaTurma {
 		
 		Aluno natal2 = new Aluno();
 		natal.setNotas(10, 8, 7);
-		
+		 
 		Aluno natal3 = new Aluno();
 		natal.setNotas(10, 8, 7);
 		

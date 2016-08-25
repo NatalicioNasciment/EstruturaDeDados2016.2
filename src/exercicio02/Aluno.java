@@ -51,7 +51,7 @@ public class Aluno {
 		this.p1 = p1 ;
 		this.p2 = p2 ;
 		this.p3 = p3 ;
-	}
+	} 
 	
 	public float getMediaAluno(){
 		return (p1 + p2 + p3) / 3;  

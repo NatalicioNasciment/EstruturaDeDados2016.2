@@ -14,7 +14,7 @@ public class Turma {
 	}	
 	public void setTurma(String turma){
 		this.turma = turma;
-	}
+	} 
 	public String getTurma(){
 		return turma;
 	}

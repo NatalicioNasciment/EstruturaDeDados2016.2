@@ -14,7 +14,7 @@ public class Veiculos {
 	private float capacidade;
 	private int tempo;
 	private int numVisitas;
-
+	
 	public Veiculos() {
 	}
 
