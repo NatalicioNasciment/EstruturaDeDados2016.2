@@ -2,19 +2,25 @@ package exercicio02;
 
 public class TesteMediaTurma {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		Aluno natal = new Aluno();
-		natal.setNotas(10, 9, 8);
+		natal.setNotas(10, 8, 7);
 		
-		Aluno liano = new Aluno();
-		liano.setNotas(10, 9, 8);
+		Aluno natal1 = new Aluno();
+		natal.setNotas(10, 8, 7);
 		
-		Aluno licio = new Aluno();
-		licio.setNotas(10, 9, 8);
+		Aluno natal2 = new Aluno();
+		natal.setNotas(10, 8, 7);
 		
-		Turma a = new Turma();
-//		System.out.println("A media do aluno é  " + natal.getMediaAluno());
-		System.out.println(a.getMediaTurma());
+		Aluno natal3 = new Aluno();
+		natal.setNotas(10, 8, 7);
+		
+		Turma a = new Turma(4);
+		Aluno aluno[] = {natal, natal1, natal2, natal3};
+		a.setMediaTurma(aluno, "A");
+		System.out.println("A media da turma é : " + a.getMediaTurma());
+		
+		
 	}
 
 }
