@@ -18,7 +18,7 @@ public class Turma {
 	public String getTurma(){
 		return turma;
 	}
-	public void setMediaTurma(Aluno aluno[], String turma){
+	public void setMediaTurma(Aluno aluno[]){
 		for(int i = 0; i < tamTurma; i++){
 			mediaTurma = mediaTurma + aluno[i].getMediaAluno();
 		}

@@ -1,7 +1,7 @@
 package exercicio02;
 
 public class TesteMediaTurma {
-
+	
 	public static void main(String[] args) {		
 		Aluno natal = new Aluno();
 		natal.setNotas(10, 8, 7);
@@ -17,8 +17,9 @@ public class TesteMediaTurma {
 		
 		Turma a = new Turma(4);
 		Aluno aluno[] = {natal, natal1, natal2, natal3};
-		a.setMediaTurma(aluno, "A");
-		System.out.println("A media da turma é : " + a.getMediaTurma());
+		a.setMediaTurma(aluno);
+		a.setTurma("A");
+		System.out.println("A media da  turma "+ a.getTurma()+ " é : "+ a.getMediaTurma());
 		
 		
 	}
