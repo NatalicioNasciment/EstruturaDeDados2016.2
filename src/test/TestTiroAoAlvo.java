@@ -6,8 +6,8 @@ import exercicio_olimpiada.TiroAoAlvo;
 
 public class TestTiroAoAlvo {
     public static void main(String[] args) {
+//     TiroAoAlvo partida = new TiroAoAlvo("F", "Dany", "Brasil");
        TiroAoAlvo partida = new TiroAoAlvo();
-       
        Scanner entrada = new Scanner(System.in);
        
        System.out.print("Informe a categoria: ");
@@ -21,7 +21,7 @@ public class TestTiroAoAlvo {
        
        partida.atirarFlexas();
        
-       System.out.println("a pontuação total é : "+ partida.getPontuacaoTotal());
+       System.out.println(partida.getNome()+ " sua pontuação total é : "+ partida.getPontuacaoTotal());
        
     }
 }

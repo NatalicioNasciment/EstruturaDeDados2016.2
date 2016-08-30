@@ -6,7 +6,6 @@ public class TiroAoAlvo {
     private String categoria;
     private String nome;
     private String pais;
-	private int tiros[];
 	private int pontos;
     private static int totalPontuacao = 0;
     private static int distancia = 30;
@@ -46,13 +45,6 @@ public class TiroAoAlvo {
     public void setDistancia(int distancia) {
         this.distancia = distancia;
     }
-    public int[]  getTiros() {
-       return tiros;
-    }
-    public void setTiro(int [] tiros) {
-        this.tiros = tiros;
-    }
-    
     
     public void atirarFlexas(){
 		for (int i = 1; i <= 4; i++) {
