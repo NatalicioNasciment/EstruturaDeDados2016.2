@@ -1,4 +1,7 @@
-package exercicio01;
+package test;
+
+import lista01.Endereco;
+import lista01.Produto;
 
 public class TestProduto {
 	public static void main(String[] args) {		
@@ -10,10 +13,13 @@ public class TestProduto {
 		
 		System.out.println("codigo |   Nome do Produto | Estoque  |  Valor Unid |      Endereço                   |");
 		System.out.println("_______|___________________|________________________|_________________________________|");
-		System.out.println(leite.getCod()+ "    |   "+ leite.getNome() + " |    " +leite.getEstoque() + "    | R$ " + leite.getPreco() + "      |    " + leite.solicitarEndereco(enderecoLeite)+"            |");
+		System.out.println(leite.getCod()+ "    |   "+ leite.getNome() + " |    " +leite.getEstoque() + "    | R$ " + 
+		leite.getPreco() + " "
+				+ "     |    " + leite.solicitarEndereco(enderecoLeite)+"            |");
 	
 		System.out.println("_______|___________________|__________|_____________|_________________________________|");
-		System.out.println(refrigerante.getCod()+ "    |   "+ refrigerante.getNome() + "       |    " +refrigerante.getEstoque() + "    | R$ " + refrigerante.getPreco() + "      |" + refrigerante.solicitarEndereco(enderecoRefrigerante)+"        |");
+		System.out.println(refrigerante.getCod()+ "    |   "+ refrigerante.getNome() + "       |    " +refrigerante.getEstoque()
+		+ "    | R$ " + refrigerante.getPreco() + "      |" + refrigerante.solicitarEndereco(enderecoRefrigerante)+"        |");
 		System.out.println("_______|___________________|__________|_____________|_________________________________|");
 	}
 }

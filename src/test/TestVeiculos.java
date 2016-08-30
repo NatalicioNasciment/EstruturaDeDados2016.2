@@ -1,4 +1,6 @@
-package exercicio03;
+package test;
+
+import lista01.Veiculos;
 
 public class TestVeiculos {
 
@@ -9,7 +11,7 @@ public class TestVeiculos {
 		ls.setAno(1999);
 		System.out.println("Caminhão da marca "+ls.getMarca() + " e o modelo " + ls.getModelo() + " e ano " + ls.getAno() + 
 		" tem a capacidade de levar "+ ls.getCapacidade() + " kg e levou "+ ls.getTempo() + " h para cada viagem e portanto fez "
-	    + ls.getNumVisitas() +" vizitas");
+	    + ls.getNumVisitas() +" visitas");
 	}
 
 }

@@ -1,4 +1,4 @@
-package exercicio02;
+package lista01;
 
 public class Turma {
 	private String turma;

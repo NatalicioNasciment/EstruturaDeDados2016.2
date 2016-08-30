@@ -1,10 +1,4 @@
-package exercicio03;
-/*
- * Faça um TAD para representar veículos com a finalidade de realizar transporte de
-carga em zonas urbanas. Estes veículos tem capacidade limitada, limite de tempo
-de operação, número de visitas que é capaz de realizar em um dia e atributos
-como: marca, modelo, ano, etc.
- * */
+package lista01;
 public class Veiculos {
 	private static final int CAPACIDADE_LIMITE = 20000;// a unidade de medida adotada é KG
 	private static final int LIMITE_TEMPO = 6;// a unidade de tempo é a HORA.
