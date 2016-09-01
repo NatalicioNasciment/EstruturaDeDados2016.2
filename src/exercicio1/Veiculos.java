@@ -1,4 +1,4 @@
-package lista01;
+package exercicio1;
 public class Veiculos {
 	private static final int CAPACIDADE_LIMITE = 20000;// a unidade de medida adotada é KG
 	private static final int LIMITE_TEMPO = 6;// a unidade de tempo é a HORA.

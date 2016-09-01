@@ -1,7 +1,4 @@
-package test;
-
-import lista01.Endereco;
-import lista01.Produto;
+package exercicio1;
 
 public class TestProduto {
 	public static void main(String[] args) {		

@@ -1,4 +1,4 @@
-package lista01;
+package exercicio1;
 
 public class Produto {
 	private int cod;

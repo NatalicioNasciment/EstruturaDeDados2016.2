@@ -1,6 +1,4 @@
-package test;
-
-import lista01.Veiculos;
+package exercicio1;
 
 public class TestVeiculos {
 

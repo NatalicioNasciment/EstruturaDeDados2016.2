@@ -1,4 +1,4 @@
-package lista01;
+package exercicio1;
 public class Aluno {
 	private String nome;
 	private int matricula;

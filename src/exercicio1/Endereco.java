@@ -1,4 +1,4 @@
-package lista01;
+package exercicio1;
 public class Endereco {
 	private String num;
 	private String cidade;

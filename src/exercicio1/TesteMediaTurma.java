@@ -1,7 +1,4 @@
-package test;
-
-import lista01.Aluno;
-import lista01.Turma;
+package exercicio1;
 
 public class TesteMediaTurma {
 	
