@@ -33,7 +33,7 @@ public class ListaComArranjo {
 
 	@Override
 	public String toString() {
-		return "ListaComArranjo [elementos=" + Arrays.toString(elementos) + "]";
+		return " [elementos=" + Arrays.toString(elementos) + "]";
 	}
 
 	public Object bucarPorIndice(int indice) throws Exception {
@@ -54,8 +54,17 @@ public class ListaComArranjo {
 		return -1;
 	}
 	
-	public Object buscarPorIntervalo(int indiceInicial, int indiceFinal){
-		return null;
+	public Object buscarPorIntervalo(int indiceInicial, int indiceFinal) throws Exception{
+		Object resultadoIntervalo[] = null; 
+		int j =0;
+		if(indiceInicial < 0 || indiceFinal > this.elementos.length){
+			throw new Exception("O intervalo informado não é válido");
+		}else{
+			for(int i = indiceInicial; i <= indiceFinal; i++, j++){
+				resultadoIntervalo[j] = elementos[i];
+			}
+		}
+		return resultadoIntervalo;
 	}
 
 	public void remover(int indice) throws Exception {
