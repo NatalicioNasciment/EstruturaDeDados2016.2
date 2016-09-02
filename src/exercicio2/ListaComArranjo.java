@@ -28,7 +28,6 @@ public class ListaComArranjo {
 				elementosAux[i] = elementos[i];
 			}
 			this.elementos = elementosAux;
-			;
 		}
 	}
 
@@ -53,11 +52,10 @@ public class ListaComArranjo {
 		}
 		return -1;
 	}
-	
+
 	public void remover(int indice) {
-		
-		for(int i = indice; i < this.elementos.length -1; i++){
-			this.elementos[i] = this.elementos[i +1];
+		for (int i = indice; i < this.elementos.length - 1; i++) {
+			this.elementos[i] = this.elementos[i + 1];
 		}
 	}
 }
