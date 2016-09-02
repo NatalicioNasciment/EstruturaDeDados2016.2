@@ -33,6 +33,17 @@ public class ListaComArranjo {
 
 	@Override
 	public String toString() {
+		/*StringBuilder s = new StringBuilder();
+		s.append("[");
+		for(int i = 0; i < this.ultimo-1; i++){
+			s.append(this.elementos[i]);
+			s.append(", ");
+		}
+		if(ultimo < 0){
+			s.append(this.elementos[ultimo-1]);
+		}
+		return elementos.toString();
+		*/
 		return " [elementos=" + Arrays.toString(elementos) + "]";
 	}
 
