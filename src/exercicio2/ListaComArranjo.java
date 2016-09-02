@@ -37,10 +37,11 @@ public class ListaComArranjo {
 	}
 
 	public Object bucarPorIndice(int indice) throws Exception {
-		if (indice >= 0 && indice <= this.elementos.length) {
-			return this.elementos[indice];
-		} else {
+		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");
+
+		} else {
+			return this.elementos[indice];
 		}
 	}
 
@@ -52,10 +53,18 @@ public class ListaComArranjo {
 		}
 		return -1;
 	}
+	
+	public Object buscarPorIntervalo(int indiceInicial, int indiceFinal){
+		return null;
+	}
 
-	public void remover(int indice) {
-		for (int i = indice; i < this.elementos.length - 1; i++) {
-			this.elementos[i] = this.elementos[i + 1];
+	public void remover(int indice) throws Exception {
+		if (indice < 0 || indice > this.elementos.length) {
+			throw new Exception("O indice informado não existe na lista");
+		} else {
+			for (int i = indice; i < this.elementos.length - 1; i++) {
+				this.elementos[indice] = this.elementos[indice + 1];
+			}
 		}
 	}
 }
