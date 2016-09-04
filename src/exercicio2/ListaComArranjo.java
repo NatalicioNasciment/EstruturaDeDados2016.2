@@ -20,38 +20,23 @@ public class ListaComArranjo {
 		}
 		return false;
 	}
-	public Object remover(int indice) throws Exception{
-		if(indice < 0 || indice > this.elementos.length){
-			throw new Exception("O indice informado não faz parte do intervalo que compõe a  lista");
-		}
-		
-		for(int i = 0; i < this.ultimo && !this.elementos[i].equals(indice); i++){
-			if(i >= this.ultimo){
-				return null;
-			}
-			Object elemento ;
-			//livro pagina 84
-			
-		}
-		
-		return null;
-	}
-/*
+	// public Object remover(Object chave) throws Exception{
+	//
+	// return null;
+	// }
+
 	public Object remover(int indice) throws Exception {
+		Object item = null;
 		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");
 		} else {
+			item = this.elementos[indice];
 			for (int i = indice; i < this.elementos.length - 1; i++) {
-				this.elementos[indice] = this.elementos[indice + 1];
-				
-				Object aux =  this.elementos[indice];
-				return aux;
+				this.elementos[i] = this.elementos[i + 1];
 			}
-			
-			return -1;
+			return item;
 		}
 	}
-	*/
 
 	@Override
 	public String toString() {

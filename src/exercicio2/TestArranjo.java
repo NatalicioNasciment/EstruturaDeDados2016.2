@@ -6,10 +6,11 @@ public class TestArranjo {
 			arranjo.adicionar("Gerlane");
 			arranjo.adicionar("Assis");
 			arranjo.adicionar("Nataliano");
-			arranjo.adicionar(1);
-			arranjo.adicionar("Assis");
+			arranjo.adicionar("Tica");
+			arranjo.adicionar("Manim");
 			arranjo.adicionar("Daniele");
 			arranjo.adicionar("Natalicio");
+			
 			
 			System.out.println(arranjo.toString());
 			System.out.println();
