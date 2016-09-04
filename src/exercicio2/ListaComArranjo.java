@@ -68,12 +68,12 @@ public class ListaComArranjo {
 	}
 
 	public Object buscarIntervalo(int indiceInicial, int indiceFinal) throws Exception {
-		Object intervalo[] = new Object[(indiceFinal-indiceInicial) + 1] ;
-		if (indiceInicial > indiceFinal ||indiceInicial < 0 || indiceFinal > this.elementos.length) {
+		Object intervalo[] = new Object[(indiceFinal - indiceInicial) + 1];
+		if (indiceInicial > indiceFinal || indiceInicial < 0 || indiceFinal > this.elementos.length) {
 			throw new Exception("O intervalo informado não é válido");
 		} else {
 			for (int i = indiceInicial; i <= indiceFinal; i++) {
-					System.out.print(this.elementos[i] + ", ");
+				System.out.print(this.elementos[i] + ", ");
 			}
 			return "";
 		}
