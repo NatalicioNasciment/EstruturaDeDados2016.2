@@ -20,10 +20,6 @@ public class ListaComArranjo {
 		}
 		return false;
 	}
-	// public Object remover(Object chave) throws Exception{
-	//
-	// return null;
-	// }
 
 	public Object remover(int indice) throws Exception {
 		Object item = null;
@@ -38,9 +34,19 @@ public class ListaComArranjo {
 		}
 	}
 
-	@Override
 	public String toString() {
-		return " [elementos=" + Arrays.toString(elementos) + "]";
+		StringBuilder string = new StringBuilder();
+		string.append("[");
+
+		for (int i = 0; i < this.elementos.length - 1; i++) {
+			string.append(this.elementos[i]);
+			string.append(", ");
+
+		}
+
+		string.append("]");
+
+		return string.toString();
 	}
 
 	public Object bucarPorIndice(int indice) throws Exception {
@@ -62,20 +68,24 @@ public class ListaComArranjo {
 	}
 
 	public Object buscarIntervalo(int indiceInicial, int indiceFinal) throws Exception {
-		Object resultadoIntervalo[] = null;
-		int j = 0;
-		if (indiceInicial < 0 || indiceFinal > this.elementos.length) {
+		Object intervalo[] = new Object[(indiceFinal-indiceInicial) + 1] ;
+		if (indiceInicial > indiceFinal ||indiceInicial < 0 || indiceFinal > this.elementos.length) {
 			throw new Exception("O intervalo informado não é válido");
 		} else {
-			for (int i = indiceInicial; i <= indiceFinal; i++, j++) {
-				resultadoIntervalo[j] = elementos[i];
+			for (int i = indiceInicial; i <= indiceFinal; i++) {
+					System.out.print(this.elementos[i] + ", ");
 			}
+			return "";
 		}
-		return resultadoIntervalo;
 	}
 
-	public void alterar(int indice, Object elemento) {
+	public void alterar(int indice, Object elemento) throws Exception {
+		if (indice < 0 || indice > this.elementos.length) {
+			throw new Exception("O indice informado não existe na lista");
 
+		} else {
+			this.elementos[indice] = elemento;
+		}
 	}
 
 	private void aumentaCapacidade() {
