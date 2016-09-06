@@ -6,11 +6,12 @@ package exercicio2;
  * 
  * */
 
-public class ListaComArranjo {
+public class ListaComArranjo2 {
 	private Object elementos[];
+	Object elementosAux[] = null;
 	private int ultimo;
 
-	public ListaComArranjo(int quantElementos) {
+	public ListaComArranjo2(int quantElementos) {
 		this.elementos = new Object[quantElementos];
 		this.ultimo = 0;
 	}
@@ -25,7 +26,14 @@ public class ListaComArranjo {
 		return false;
 	}
 
-	public Object remover(int indice) throws Exception {	
+	public Object remover(int indice) throws Exception {
+		if(this.ultimo <= this.elementos.length){
+			int novoTamanho = this.elementos.length * (3 /4);
+			
+			for(int i = 0; i < novoTamanho; i++){
+				this.elementosAux[i] = elementos[i];
+			}
+		}
 		Object item = null;
 		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");

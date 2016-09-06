@@ -14,7 +14,7 @@ public class TestArranjo {
 		System.out.println(arranjo);
 		System.out.println("-----------------------------------------------------------------------------------");
 		System.out.print("Resultado do intervalo : ");
-		System.out.println(arranjo.buscarIntervalo(4, 6));
+//		System.out.println(arranjo.buscarIntervalo(4, 6));
 		arranjo.alterar(6, "Daniele Oliveira");
 		System.out.println("-----------------------------------------------------------------------------------");
 		System.out.println("O elemento removido foi: " + arranjo.remover(1));
