@@ -1,13 +1,8 @@
 package exercicio2;
 
-/*se (ultimo <= tam /2) então 
- * novoTamanho = tam * (3/4)
- * 
- * 
- * */
-
 public class ListaComArranjo {
 	private Object elementos[];
+	private Object elementosAux[] = null;
 	private int ultimo;
 
 	public ListaComArranjo(int quantElementos) {
@@ -25,7 +20,7 @@ public class ListaComArranjo {
 		return false;
 	}
 
-	public Object remover(int indice) throws Exception {	
+	public Object remover(int indice) throws Exception {
 		Object item = null;
 		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");
@@ -34,24 +29,23 @@ public class ListaComArranjo {
 			for (int i = indice; i < this.elementos.length - 1; i++) {
 				this.elementos[i] = this.elementos[i + 1];
 			}
+			reduzirCapacidade();
 			return item;
 		}
 	}
-	/*
-	public Object removerPorElemento(Object elemento){
+
+	public void removerPorElemento(Object elemento) {
+	}
+
+	public Object removerPorIntervalo(int indiceInicial, int indiceFinal) {
 		return null;
 	}
-	
-	public Object removerPorIntervalo(indiceInicial, int indiceFinal ){
-		return null;
-	}
-	*/
 
 	public String toString() {
 		StringBuilder string = new StringBuilder();
 		string.append("[");
 
-		for (int i = 0; i < this.elementos.length - 1; i++) {
+		for (int i = 0; i < this.elementos.length; i++) {
 			string.append(this.elementos[i]);
 			string.append(", ");
 		}
@@ -80,7 +74,6 @@ public class ListaComArranjo {
 	}
 
 	public Object exibirIntervalo(int indiceInicial, int indiceFinal) throws Exception {
-//		Object intervalo[] = new Object[(indiceFinal - indiceInicial) + 1];
 		if (indiceInicial > indiceFinal || indiceInicial < 0 || indiceFinal > this.elementos.length) {
 			throw new Exception("O intervalo informado não é válido");
 		} else {
@@ -105,6 +98,17 @@ public class ListaComArranjo {
 			Object elementosAux[] = new Object[this.elementos.length * 2];
 			for (int i = 0; i < this.elementos.length; i++) {
 				elementosAux[i] = elementos[i];
+			}
+			this.elementos = elementosAux;
+		}
+	}
+
+	private void reduzirCapacidade() {
+		if (this.ultimo <= this.elementos.length / 2) {
+			int tam = (int) (this.elementos.length * (0.75));
+			elementosAux = new Object[tam];
+			for (int i = 0; i < tam; i++) {
+				this.elementosAux[i] = this.elementos[i];
 			}
 			this.elementos = elementosAux;
 		}

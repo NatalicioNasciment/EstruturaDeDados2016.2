@@ -8,7 +8,8 @@ package exercicio2;
 
 public class ListaComArranjo2 {
 	private Object elementos[];
-	Object elementosAux[] = null;
+	private Object elementoAux[];
+	// Object elementosAux[] = null;
 	private int ultimo;
 
 	public ListaComArranjo2(int quantElementos) {
@@ -27,13 +28,6 @@ public class ListaComArranjo2 {
 	}
 
 	public Object remover(int indice) throws Exception {
-		if(this.ultimo <= this.elementos.length){
-			int novoTamanho = this.elementos.length * (3 /4);
-			
-			for(int i = 0; i < novoTamanho; i++){
-				this.elementosAux[i] = elementos[i];
-			}
-		}
 		Object item = null;
 		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");
@@ -42,18 +36,22 @@ public class ListaComArranjo2 {
 			for (int i = indice; i < this.elementos.length - 1; i++) {
 				this.elementos[i] = this.elementos[i + 1];
 			}
+			if (this.ultimo <= this.elementos.length / 2) {
+				int novoTam = (int) (this.elementos.length * 0.75);
+				Object elementoAux = new Object[novoTam];
+				for (int i = 0; i < novoTam; i++) {
+//					this.elementoAuxm[i] = elementos[i];
+				}
+			}
 			return item;
 		}
 	}
 	/*
-	public Object removerPorElemento(Object elemento){
-		return null;
-	}
-	
-	public Object removerPorIntervalo(indiceInicial, int indiceFinal ){
-		return null;
-	}
-	*/
+	 * public Object removerPorElemento(Object elemento){ return null; }
+	 * 
+	 * public Object removerPorIntervalo(indiceInicial, int indiceFinal ){
+	 * return null; }
+	 */
 
 	public String toString() {
 		StringBuilder string = new StringBuilder();
@@ -88,7 +86,7 @@ public class ListaComArranjo2 {
 	}
 
 	public Object exibirIntervalo(int indiceInicial, int indiceFinal) throws Exception {
-//		Object intervalo[] = new Object[(indiceFinal - indiceInicial) + 1];
+		// Object intervalo[] = new Object[(indiceFinal - indiceInicial) + 1];
 		if (indiceInicial > indiceFinal || indiceInicial < 0 || indiceFinal > this.elementos.length) {
 			throw new Exception("O intervalo informado não é válido");
 		} else {
@@ -117,4 +115,9 @@ public class ListaComArranjo2 {
 			this.elementos = elementosAux;
 		}
 	}
+
+	private void reduzirCapacidade() {
+
+	}
+
 }
