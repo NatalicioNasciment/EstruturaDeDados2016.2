@@ -35,6 +35,9 @@ public class ListaComArranjo {
 	}
 
 	public void removerPorElemento(Object elemento) {
+		for(int i = 0; i < this.elementos.length; i++){
+			
+		}
 	}
 
 	public Object removerPorIntervalo(int indiceInicial, int indiceFinal) {
@@ -87,7 +90,6 @@ public class ListaComArranjo {
 	public void alterar(int indice, Object elemento) throws Exception {
 		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");
-
 		} else {
 			this.elementos[indice] = elemento;
 		}
