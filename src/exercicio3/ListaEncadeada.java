@@ -47,26 +47,33 @@ public class ListaEncadeada {
 		return this.pegaCelula(posicao).getElemento();
 	}
 
-	public void removeDoInicio(){
-			this.primeira = this.primeira.getProx();
-			this.totalElementos--;
-
+	public void removeDoInicio() {
+		this.primeira = this.primeira.getProx();
+		this.totalElementos--;
 		if (this.totalElementos == 0) {
 			this.ultima = null;
 		}
 	}
-	
-	public void removeDoFim() {
+
+	public void removeDoFim() throws Exception {
+		if (this.totalElementos == 1) {
+			this.removeDoInicio();
+		} else {
+			Celula penultima = this.pegaCelula(totalElementos - 1);
+			Celula aux = penultima.getProx();
+			ultima = penultima;
+			this.totalElementos--;
+		}
 	}
 
 	public void remove(int posicao) {
 	}
 
 	public int tamanho() {
-		return 0;
+		return this.totalElementos;
 	}
 
-	public boolean contem(Object o) {
+	public boolean verificaExistencia(Object elemento) {
 		return false;
 	}
 

@@ -15,12 +15,21 @@ public static void main(String[] args) throws Exception {
 	lista.adicionaNoInicio("Danilo");
 	lista.adicionaNoInicio("Nilsinha");
 	lista.adiciona(2, "Liano");
-//	lista.adiciona("Danilo"); ta dando erro
 	System.out.println(lista);
+	System.out.println("-------------------------------------------------------------------------------------------------");
 	System.out.println("O indice informado corresponde ao elemento : " + lista.busca(7));
+	System.out.println("-------------------------------------------------------------------------------------------------");
+	System.out.println("O tamanho da lista é : " +lista.tamanho());
+	System.out.println("-------------------------------------------------------------------------------------------------");
 	lista.removeDoInicio();
-	System.out.println();
 	System.out.println(lista);
-	
+	System.out.println("-------------------------------------------------------------------------------------------------");
+	System.out.println("O tamanho da lista é :" + lista.tamanho());
+	System.out.println("-------------------------------------------------------------------------------------------------");
+	lista.removeDoFim();
+	System.out.println(lista);
+	System.out.println("-------------------------------------------------------------------------------------------------");
+	System.out.println("O tamanho da lista é : " +lista.tamanho());
+	System.out.println("-------------------------------------------------------------------------------------------------");
 }
 }
