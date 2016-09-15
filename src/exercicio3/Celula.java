@@ -13,6 +13,10 @@ public class Celula {
 		this.elemento = elemento;
 	}
 
+	public Celula() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Object getElemento() {
 		return elemento;
 	}

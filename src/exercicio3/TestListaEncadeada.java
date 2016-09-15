@@ -4,20 +4,16 @@ public class TestListaEncadeada {
 public static void main(String[] args) throws Exception {
 	
 	ListaEncadeada lista = new ListaEncadeada();
+	
+	lista.adiciona("Danisio");
 	lista.adicionaNoInicio("Natalicio");
-	lista.adicionaNoInicio("Daniele");
-	lista.adicionaNoInicio("Gerlane");
-	lista.adicionaNoInicio("Assis");
-	lista.adicionaNoInicio("Nataliano");
-	lista.adicionaNoInicio("Suely");
-	lista.adiciona("Marluce");
-	lista.adicionaNoInicio("Danisio");
-	lista.adicionaNoInicio("Danilo");
-	lista.adicionaNoInicio("Nilsinha");
-	lista.adiciona(2, "Liano");
+//	lista.adiciona("Dmon");
+//	lista.adicionaNoInicio("Natalicio");
+	
+	
 	System.out.println(lista);
 	System.out.println("-------------------------------------------------------------------------------------------------");
-	System.out.println("O indice informado corresponde ao elemento : " + lista.busca(7));
+	System.out.println("O indice informado corresponde ao elemento : " + lista.busca(1));
 	System.out.println("-------------------------------------------------------------------------------------------------");
 	System.out.println("O tamanho da lista é : " +lista.tamanho());
 	System.out.println("-------------------------------------------------------------------------------------------------");
@@ -31,5 +27,6 @@ public static void main(String[] args) throws Exception {
 	System.out.println("-------------------------------------------------------------------------------------------------");
 	System.out.println("O tamanho da lista é : " +lista.tamanho());
 	System.out.println("-------------------------------------------------------------------------------------------------");
+	System.out.println("O elemento passado  retorna : "+ lista.verificaExistencia("gerlane"));
 }
 }

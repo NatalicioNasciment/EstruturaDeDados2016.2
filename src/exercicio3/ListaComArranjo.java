@@ -1,4 +1,4 @@
-package exercicio2;
+package exercicio3;
 
 public class ListaComArranjo {
 	private Object elementos[];
@@ -34,22 +34,9 @@ public class ListaComArranjo {
 		}
 	}
 
-	public Object removerNoInicio() throws Exception{
-		if (elementos[0] == null) {
-			throw new Exception("Lista Vazio");
-		}else{
-			Object aux = elementos[0];
-			for (int i = 0; i < this.elementos.length - 1; i++) {
-				elementos[i] = elementos[i + 1];
-			}
-			elementos[ultimo - 1] = null;
-			return aux;
-		}
-	}
-
 	public void removerPorElemento(Object elemento) {
-		for (int i = 0; i < this.elementos.length; i++) {
-
+		for(int i = 0; i < this.elementos.length; i++){
+			
 		}
 	}
 
