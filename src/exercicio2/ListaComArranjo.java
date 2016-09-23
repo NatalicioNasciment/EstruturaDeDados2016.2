@@ -1,20 +1,20 @@
 package exercicio2;
 
 public class ListaComArranjo <T>{
-	private T[] elementos;
+	protected T[] elementos;
 	private T[] elementosAux;
-	private int ultimo;
+	protected int tamanho;
 
 	public ListaComArranjo(int quantElementos) {
 		this.elementos = (T[])new Object[quantElementos];
-		this.ultimo = 0;
+		this.tamanho = 0;
 	}
 
 	public boolean adicionar(T elemento) {
 		aumentaCapacidade();
-		if (this.ultimo < this.elementos.length) {
-			this.elementos[this.ultimo] = elemento;
-			this.ultimo++;
+		if (this.tamanho < this.elementos.length) {
+			this.elementos[this.tamanho] = elemento;
+			this.tamanho++;
 			return true;
 		}
 		return false;
@@ -42,7 +42,7 @@ public class ListaComArranjo <T>{
 			for (int i = 0; i < this.elementos.length - 1; i++) {
 				elementos[i] = elementos[i + 1];
 			}
-			elementos[ultimo - 1] = null;
+			elementos[tamanho - 1] = null;
 			return aux;
 		}
 	}
@@ -51,8 +51,8 @@ public class ListaComArranjo <T>{
 		if (elementos[0] == null) {
 			throw new Exception("Lista Vazia");
 		}else{
-			T aux = elementos[ultimo-1];
-			ultimo--;
+			T aux = elementos[tamanho-1];
+			tamanho--;
 			return aux;
 		}
 	}
@@ -71,7 +71,7 @@ public class ListaComArranjo <T>{
 		StringBuilder string = new StringBuilder();
 		string.append("[");
 
-		for (int i = 0; i < this.elementos.length; i++) {
+		for (int i = 0; i < this.tamanho; i++) {
 			string.append(this.elementos[i]);
 			string.append(", ");
 		}
@@ -119,7 +119,7 @@ public class ListaComArranjo <T>{
 	}
 
 	private void aumentaCapacidade() {
-		if (this.ultimo == this.elementos.length) {
+		if (this.tamanho == this.elementos.length) {
 			T elementosAux[] =(T[])new Object[this.elementos.length * 2];
 			for (int i = 0; i < this.elementos.length; i++) {
 				elementosAux[i] = elementos[i];
@@ -129,7 +129,7 @@ public class ListaComArranjo <T>{
 	}
 
 	private void reduzirCapacidade() {
-		if (this.ultimo <= this.elementos.length / 2) {
+		if (this.tamanho <= this.elementos.length / 2) {
 			int tam = (int) (this.elementos.length * (0.75));
 			elementosAux = (T[])new Object[tam];
 			for (int i = 0; i < tam; i++) {
@@ -139,6 +139,6 @@ public class ListaComArranjo <T>{
 		}
 	}
 	public boolean vazia(){
-		return this.ultimo == 0;
+		return this.tamanho == 0;
 	}
 }
