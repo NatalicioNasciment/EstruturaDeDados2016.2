@@ -1,16 +1,16 @@
 package exercicio2;
 
-public class ListaComArranjo {
-	private Object elementos[];
-	private Object elementosAux[] = null;
+public class ListaComArranjo <T>{
+	private T[] elementos;
+	private T[] elementosAux;
 	private int ultimo;
 
 	public ListaComArranjo(int quantElementos) {
-		this.elementos = new Object[quantElementos];
+		this.elementos = (T[])new Object[quantElementos];
 		this.ultimo = 0;
 	}
 
-	public boolean adicionar(Object elemento) {
+	public boolean adicionar(T elemento) {
 		aumentaCapacidade();
 		if (this.ultimo < this.elementos.length) {
 			this.elementos[this.ultimo] = elemento;
@@ -20,8 +20,8 @@ public class ListaComArranjo {
 		return false;
 	}
 
-	public Object remover(int indice) throws Exception {
-		Object item = null;
+	public T remover(int indice) throws Exception {
+		T item = null;
 		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");
 		} else {
@@ -34,11 +34,11 @@ public class ListaComArranjo {
 		}
 	}
 
-	public Object removerNoInicio() throws Exception{
+	public T removerNoInicio() throws Exception{
 		if (elementos[0] == null) {
 			throw new Exception("Lista Vazio");
 		}else{
-			Object aux = elementos[0];
+			T aux = elementos[0];
 			for (int i = 0; i < this.elementos.length - 1; i++) {
 				elementos[i] = elementos[i + 1];
 			}
@@ -47,15 +47,15 @@ public class ListaComArranjo {
 		}
 	}
 
-	public void removerPorElemento(Object elemento) {
+	public void removerPorElemento(T elemento) {
 		for (int i = 0; i < this.elementos.length; i++) {
 
 		}
 	}
 
-	public Object removerPorIntervalo(int indiceInicial, int indiceFinal) {
-		return null;
-	}
+//	public Object removerPorIntervalo(int indiceInicial, int indiceFinal) {
+//		return null;
+//	}
 
 	public String toString() {
 		StringBuilder string = new StringBuilder();
@@ -71,7 +71,7 @@ public class ListaComArranjo {
 		return string.toString();
 	}
 
-	public Object bucarPorIndice(int indice) throws Exception {
+	public T bucarPorIndice(int indice) throws Exception {
 		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");
 
@@ -80,7 +80,7 @@ public class ListaComArranjo {
 		}
 	}
 
-	public int buscarPorElemento(Object elemento) {
+	public int buscarPorElemento(T elemento) {
 		for (int i = 0; i < this.elementos.length; i++) {
 			if (this.elementos[i] == elemento) {
 				return i;
@@ -89,18 +89,18 @@ public class ListaComArranjo {
 		return -1;
 	}
 
-	public Object exibirIntervalo(int indiceInicial, int indiceFinal) throws Exception {
+	public T exibirIntervalo(int indiceInicial, int indiceFinal) throws Exception {
 		if (indiceInicial > indiceFinal || indiceInicial < 0 || indiceFinal > this.elementos.length) {
 			throw new Exception("O intervalo informado não é válido");
 		} else {
 			for (int i = indiceInicial; i <= indiceFinal; i++) {
 				System.out.print(this.elementos[i] + ", ");
 			}
-			return "";
+			return (T) "";
 		}
 	}
 
-	public void alterar(int indice, Object elemento) throws Exception {
+	public void alterar(int indice, T elemento) throws Exception {
 		if (indice < 0 || indice > this.elementos.length) {
 			throw new Exception("O indice informado não existe na lista");
 		} else {
@@ -110,7 +110,7 @@ public class ListaComArranjo {
 
 	private void aumentaCapacidade() {
 		if (this.ultimo == this.elementos.length) {
-			Object elementosAux[] = new Object[this.elementos.length * 2];
+			T elementosAux[] =(T[])new Object[this.elementos.length * 2];
 			for (int i = 0; i < this.elementos.length; i++) {
 				elementosAux[i] = elementos[i];
 			}
@@ -121,7 +121,7 @@ public class ListaComArranjo {
 	private void reduzirCapacidade() {
 		if (this.ultimo <= this.elementos.length / 2) {
 			int tam = (int) (this.elementos.length * (0.75));
-			elementosAux = new Object[tam];
+			elementosAux = (T[])new Object[tam];
 			for (int i = 0; i < tam; i++) {
 				this.elementosAux[i] = this.elementos[i];
 			}

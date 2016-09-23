@@ -30,19 +30,6 @@ public class ListaEncadeada {
 		this.totalElementos++;
 	}
 
-//	public void adiciona(int posicao, Object elemento) throws Exception {
-//		if (posicao == 0) {
-//			this.adicionaNoInicio(elemento);
-//		} else if (posicao == this.totalElementos) {
-//			this.adiciona(elemento);
-//		} else {
-//			Celula anterior = this.pegaCelula(posicao - 1);
-//			Celula nova = new Celula(anterior.getProx(), elemento);
-//			anterior.setProx(nova);
-//			this.totalElementos++;
-//		}
-//	}
-
 	public Object busca(int posicao) throws Exception {
 		return this.pegaCelula(posicao).getElemento();
 	}
