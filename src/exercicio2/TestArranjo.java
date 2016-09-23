@@ -2,7 +2,8 @@ package exercicio2;
 
 public class TestArranjo {
 	public static void main(String[] args) throws Exception {
-		ListaComArranjo arranjo = new ListaComArranjo(2);
+//		ListaComArranjo arranjo = new ListaComArranjo(2);
+		ListaComArranjo<String> arranjo = new ListaComArranjo<>(2);
 		
 		arranjo.adicionar("Natlaicio");
 		arranjo.adicionar("Andinha");
@@ -14,6 +15,7 @@ public class TestArranjo {
 		
 		System.out.println(arranjo);
 		System.out.println(	arranjo.removerNoInicio());
+		System.out.println(arranjo.removerDoFim());
 		System.out.println(arranjo);
 //		System.out.println("-----------------------------------------------------------------------------------");
 //		System.out.print("Resultado do intervalo : ");

@@ -46,12 +46,22 @@ public class ListaComArranjo <T>{
 			return aux;
 		}
 	}
-
-	public void removerPorElemento(T elemento) {
-		for (int i = 0; i < this.elementos.length; i++) {
-
+	
+	public T removerDoFim() throws Exception{
+		if (elementos[0] == null) {
+			throw new Exception("Lista Vazia");
+		}else{
+			T aux = elementos[ultimo-1];
+			ultimo--;
+			return aux;
 		}
 	}
+
+//	public void removerPorElemento(T elemento) {
+//		for (int i = 0; i < this.elementos.length; i++) {
+//
+//		}
+//	}
 
 //	public Object removerPorIntervalo(int indiceInicial, int indiceFinal) {
 //		return null;
@@ -127,5 +137,8 @@ public class ListaComArranjo <T>{
 			}
 			this.elementos = elementosAux;
 		}
+	}
+	public boolean vazia(){
+		return this.ultimo == 0;
 	}
 }
