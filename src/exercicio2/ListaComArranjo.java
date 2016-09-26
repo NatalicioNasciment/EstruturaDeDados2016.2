@@ -1,12 +1,12 @@
 package exercicio2;
 
-public class ListaComArranjo <T>{
+public class ListaComArranjo<T> {
 	protected T[] elementos;
 	private T[] elementosAux;
 	protected int tamanho;
 
 	public ListaComArranjo(int quantElementos) {
-		this.elementos = (T[])new Object[quantElementos];
+		this.elementos = (T[]) new Object[quantElementos];
 		this.tamanho = 0;
 	}
 
@@ -34,10 +34,10 @@ public class ListaComArranjo <T>{
 		}
 	}
 
-	public T removerNoInicio() throws Exception{
+	public T removerNoInicio() throws Exception {
 		if (elementos[0] == null) {
 			throw new Exception("Lista Vazio");
-		}else{
+		} else {
 			T aux = elementos[0];
 			for (int i = 0; i < this.elementos.length - 1; i++) {
 				elementos[i] = elementos[i + 1];
@@ -46,26 +46,16 @@ public class ListaComArranjo <T>{
 			return aux;
 		}
 	}
-	
-	public T removerDoFim() throws Exception{
+
+	public T removerDoFim() throws Exception {
 		if (elementos[0] == null) {
 			throw new Exception("Lista Vazia");
-		}else{
-			T aux = elementos[tamanho-1];
+		} else {
+			T aux = elementos[tamanho - 1];
 			tamanho--;
 			return aux;
 		}
 	}
-
-//	public void removerPorElemento(T elemento) {
-//		for (int i = 0; i < this.elementos.length; i++) {
-//
-//		}
-//	}
-
-//	public Object removerPorIntervalo(int indiceInicial, int indiceFinal) {
-//		return null;
-//	}
 
 	public String toString() {
 		StringBuilder string = new StringBuilder();
@@ -120,7 +110,7 @@ public class ListaComArranjo <T>{
 
 	private void aumentaCapacidade() {
 		if (this.tamanho == this.elementos.length) {
-			T elementosAux[] =(T[])new Object[this.elementos.length * 2];
+			T elementosAux[] = (T[]) new Object[this.elementos.length * 2];
 			for (int i = 0; i < this.elementos.length; i++) {
 				elementosAux[i] = elementos[i];
 			}
@@ -131,14 +121,15 @@ public class ListaComArranjo <T>{
 	private void reduzirCapacidade() {
 		if (this.tamanho <= this.elementos.length / 2) {
 			int tam = (int) (this.elementos.length * (0.75));
-			elementosAux = (T[])new Object[tam];
+			elementosAux = (T[]) new Object[tam];
 			for (int i = 0; i < tam; i++) {
 				this.elementosAux[i] = this.elementos[i];
 			}
 			this.elementos = elementosAux;
 		}
 	}
-	public boolean vazia(){
+
+	public boolean vazia() {
 		return this.tamanho == 0;
 	}
 }

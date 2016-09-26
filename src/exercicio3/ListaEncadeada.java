@@ -3,62 +3,69 @@ package exercicio3;
 public class ListaEncadeada {
 	private Celula primeira;
 	private Celula ultima;
-	private int totalElementos;
+	private int tamLista;
 
 	public ListaEncadeada() {
-		primeira = null;
-		ultima = primeira;
+		this.primeira = null;
+		this.ultima = this.primeira;
 	}
 
-	public void adiciona(Object elemento) {
-		if (this.totalElementos == 0) {
+	public boolean adiciona(Object elemento) {
+		if (vazia()) {
 			this.adicionaNoInicio(elemento);
+			return true;
 		} else {
-			Celula nova = new Celula(elemento);
-			this.ultima.setProx(nova);
-			this.totalElementos++;
+			Celula aux = new Celula(elemento);
+			aux.setElemento(elemento);
+			aux.setProx(null);
+			this.ultima.setProx(aux);
+			this.ultima = aux;
+			this.tamLista++;
+			return true;
 		}
 	}
 
 	public void adicionaNoInicio(Object elemento) {
-		Celula nova = new Celula(this.primeira, elemento);
-		this.primeira = nova;
-
-		if (totalElementos == 0) {
-			this.ultima = this.primeira;
-		}
-		this.totalElementos++;
+		this.primeira = new Celula();
+		this.ultima = this.primeira;
+		
+		Celula aux = new Celula();
+		aux.setElemento(elemento);
+		aux.setProx(null);
+		this.ultima.setProx(aux);
+		this.ultima = aux;
+		this.tamLista++;
 	}
 
 	public Object busca(int posicao) throws Exception {
 		return this.pegaCelula(posicao).getElemento();
 	}
 
-	public void removeDoInicio() {
-		this.primeira = this.primeira.getProx();
-		this.totalElementos--;
-		if (this.totalElementos == 0) {
-			this.ultima = null;
-		}
-	}
-
-	public void removeDoFim() throws Exception {
-		if (this.totalElementos == 1) {
-			this.removeDoInicio();
-		} else {
-			Celula penultima = this.pegaCelula(totalElementos - 1);
-			Celula aux = penultima.getProx();
-			ultima = penultima;
-			this.totalElementos--;
-		}
-	}
-	
+//	public void removeDoInicio() {
+//		this.primeira = this.primeira.getProx();
+//		this.totalElementos--;
+//		if (this.totalElementos == 0) {
+//			this.ultima = null;
+//		}
+//	}
+//
+//	public void removeDoFim() throws Exception {
+//		if (this.totalElementos == 1) {
+//			this.removeDoInicio();
+//		} else {
+//			Celula penultima = this.pegaCelula(totalElementos - 1);
+//			Celula aux = penultima.getProx();
+//			ultima = penultima;
+//			this.totalElementos--;
+//		}
+//	}
+//	
 	public int tamanho() {
-		return this.totalElementos;
+		return this.tamLista;
 	}
 
 	public boolean verificaExistencia(Object elemento) {
-		Celula atual = this.primeira;
+		Celula atual = this.primeira.getProx();
 		while (atual != null) {
 			if (atual.getElemento().equals(elemento)) {
 				return true;
@@ -69,12 +76,12 @@ public class ListaEncadeada {
 	}
 
 	public String toString() {
-		if (this.totalElementos == 0) {
+		if (this.tamLista == 0) {
 			return "[]";
 		}
 		StringBuilder s = new StringBuilder("[");
-		Celula atual = primeira;
-		for (int i = 0; i < this.totalElementos - 1; i++) {
+		Celula atual = this.primeira.getProx();
+		for (int i = 0; i < this.tamLista - 1; i++) {
 			s.append(atual.getElemento());
 			s.append(", ");
 			atual = atual.getProx();
@@ -84,20 +91,28 @@ public class ListaEncadeada {
 		return s.toString();
 	}
 	
-	private boolean posicaoOcupada(int posicao) {
-		return posicao > 0 && posicao < this.totalElementos;
-	}
-
 	private Celula pegaCelula(int posicao) throws Exception {
-		if (!this.posicaoOcupada(posicao)) {
+		if (posicao < 0 || posicao > this.tamLista) {
 			throw new Exception("Posicao inexistente");
 		} else {
-			Celula atual = primeira;
-			for (int i = 0; i < posicao; i++) {
-				atual = atual.getProx();
+			Celula atual = this.primeira;
+			for (int i = 0; i <= posicao; i++) {
+				if(i == posicao){
+					atual = atual.getProx();
+					atual = (Celula) atual.getElemento();
+					break;
+				}
+				return atual;
 			}
-			return atual;
+			
 		}
+		return primeira;
 	}
-
+	
+	public boolean vazia(){
+		if(this.primeira == null){
+			return true;
+		}
+		return false;
+	}
 }
