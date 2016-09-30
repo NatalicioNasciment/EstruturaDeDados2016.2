@@ -20,6 +20,14 @@ public class PilhaListaEncadeada<T> extends ListaEncadeada{
 	public int tamanho(){
 		return super.tamanho();
 	}
-	
+	public void esvaziar(){
+		super.esvaziar();
+	}
+	public boolean existencia(T elemento){
+		return super.verificaExistencia(elemento);
+	}
+	public int verExistencia(T elemento) throws Exception{
+		return super.verificarExistencia(elemento);
+	}
 	
 }

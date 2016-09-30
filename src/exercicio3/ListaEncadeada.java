@@ -70,6 +70,18 @@ public class ListaEncadeada<T> {
 		}
 		return false;
 	}
+	
+	public int verificarExistencia(T elemento) throws Exception{
+		Celula atual = this.primeira.getProx();
+		for (int i = 0; i< this.tamLista; i++) {
+			if (atual.getElemento().equals(elemento)) {
+				return i;
+			}
+			atual = atual.getProx();
+		}
+		throw new Exception("Erro");
+//		return -1;
+	}
 
 	public String toString() {
 		if (vazia()) {
@@ -122,5 +134,9 @@ public class ListaEncadeada<T> {
 			return true;
 		}
 		return false;
+	}
+	public void esvaziar(){
+		this.primeira = null;
+		this.ultima = primeira;
 	}
 }
