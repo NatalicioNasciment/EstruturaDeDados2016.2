@@ -3,6 +3,7 @@ package exercicio4;
 public class TestFilaListaEncadeada {
 	public static void main(String[] args) throws Exception {
 		FilaListaEncadeada<String> fle = new FilaListaEncadeada<>();
+		System.out.println(fle);
 		fle.enfilerar("Natalicio");
 		fle.enfilerar("Daniele");
 		fle.enfilerar("Gerlane");
@@ -14,6 +15,18 @@ public class TestFilaListaEncadeada {
 		fle.desenfilerar();
 		System.out.println(fle);
 		System.out.println("--------------------------------------------");
+		System.out.println("O indice corresponde : " + fle.busca(0));
+		System.out.println("--------------------------------------------");
+		System.out.println("O Elemento corresponde ao índice  : " + fle.busca("fljfd"));
+		System.out.println("Lista está vazia :" + fle.vazia());
+		fle.limpar();
+		System.out.println("--------------------------------------------");
+		System.out.println("Lista está vazia :" + fle.vazia());
+		System.out.println("--------------------------------------------");
+		fle.enfilerar("Ivonete");
+		System.out.println(fle);
+		System.out.println("--------------------------------------------");
+		System.out.println("O tamanho da lista eh : " + fle.tamanhoLista());
 		
 		
 	}
