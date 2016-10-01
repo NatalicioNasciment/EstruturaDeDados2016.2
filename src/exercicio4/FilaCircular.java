@@ -14,13 +14,11 @@ public class FilaCircular<T> {
 	}
 
 	public void enfilerar(T item) throws Exception {
-		if (cheia()) {
-			throw new Exception("A lista está cheia!!!");
-		}
+		redimensionar();
 		this.itens[tras] = item;
 		this.tras = (tras + 1) % tam;
 	}
-
+/*
 	public void desenfilerar() throws Exception {
 		if (vazia()) {
 			throw new Exception("Fila vazia!!!");
@@ -30,36 +28,48 @@ public class FilaCircular<T> {
 			this.itens[this.tras - 1] = null;
 		}
 	}
+	*/
+	
+	public T desenfilerar() throws Exception {
+		if (vazia()) {
+			throw new Exception("Fila vazia!!!");
+		} else {
+			T item = itens[this.frente];
+			this.itens[this.frente] = null;
+			this.frente = (this.frente + 1) % tam;
+			return item;
+		}
+	}
 
 	public void listar() {
 		for (int i = 0; i < this.tam; i++) {
 			if (itens[i] != null) {
-				System.out.println(itens[i]);
+				System.out.print("[" + itens[i] + "]");
 			}
 		}
 	}
 
 	public int quantElemento() {
 		int cont = 0;
-		if(this.tras > this.frente){
-			for (int i = this.frente; this.frente <=  this.tras; this.frente++) {
+		if (this.tras > this.frente) {
+			for (int i = this.frente; this.frente <= this.tras; this.frente++) {
 				cont++;
-				
+
 			}
-			return cont - 1;
-		}else{
-			for (int i = this.tras; this.tras <=  this.frente; i++) {
+			return cont;
+		} else {
+			for (int i = this.tras; this.tras <= this.frente; i++) {
 				cont++;
-				
+
 			}
-			return cont -1;
+			return cont;
 		}
 	}
 
-	private T redimensionar() {
+	private void redimensionar() {
 
 		if (this.tras + 1 == this.tam) {
-			 novosItens = (T[]) new Object[2 * tam];
+			novosItens = (T[]) new Object[2 * tam];
 			for (int i = 0; i < this.tam; i++) {
 				this.novosItens[i] = itens[(this.frente + i) % tam];
 			}
@@ -68,7 +78,6 @@ public class FilaCircular<T> {
 			this.tras = quantElemento();
 			this.tam = 2 * this.tam;
 		}
-		return null;
 	}
 
 	public boolean vazia() {
