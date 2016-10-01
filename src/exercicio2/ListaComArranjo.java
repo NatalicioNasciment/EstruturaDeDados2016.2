@@ -107,6 +107,13 @@ public class ListaComArranjo<T> {
 			this.elementos[indice] = elemento;
 		}
 	}
+	public void alterar( T elemento) throws Exception {
+		if (vazia()) {
+			throw new Exception("Lista vazia!!!");
+		} else {
+			this.elementos[tamanho -1] = elemento;
+		}
+	}
 
 	private void aumentaCapacidade() {
 		if (this.tamanho == this.elementos.length) {
@@ -131,5 +138,8 @@ public class ListaComArranjo<T> {
 
 	public boolean vazia() {
 		return this.tamanho == 0;
+	}
+	public int getTamanho(){
+		return this.tamanho;
 	}
 }

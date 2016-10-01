@@ -21,14 +21,19 @@ public class PilhaListaArranjo<T> extends ListaComArranjo<T> {
 			return null;
 		}
 		return this.elementos[--tamanho];
-	}
-
-	// herda o metodo vazia() da classe ListaComArranjo
+	}	
 
 	public T topo() {
 		if (this.vazia()) {
 			return null;
 		}
 		return this.elementos[tamanho - 1];
+	}
+	
+	public void alterar(T elemento) throws Exception {
+		super.alterar(elemento);
+	}
+	public boolean vazia(){
+		return super.vazia();
 	}
 }
