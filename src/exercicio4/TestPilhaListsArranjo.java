@@ -23,6 +23,14 @@ public class TestPilhaListsArranjo {
 		System.out.println(pilha);
 		System.out.println("----------------------------------------");
 		System.out.println("O tamanho da Pilha é: "+ pilha.getTamanho());
+		System.out.println("----------------------------------------");
+		pilha.alterar(1, "Daniele");
+		System.out.println(pilha);
+		System.out.println("------------------------------------------------------");
+		System.out.println("O indice do elemento passado eh : " + pilha.buscarPorElemento("Gerlane Rodrigues"));
+		System.out.println("------------------------------------------------------");
+		System.out.println("O indice passado corresponde ao elemento : " + pilha.bucarPorIndice(1));
+		
 		
 	}
 }

@@ -30,10 +30,22 @@ public class PilhaListaArranjo<T> extends ListaComArranjo<T> {
 		return this.elementos[tamanho - 1];
 	}
 	
+	public void alterar(int indice, T elemento) throws Exception {
+		super.alterar(indice, elemento);
+	}
+
 	public void alterar(T elemento) throws Exception {
 		super.alterar(elemento);
+	}
+	
+	public T bucarPorIndice(int indice) throws Exception {
+		return super.bucarPorIndice(indice);
+	}
+	public int buscarPorElemento(T elemento) {
+		return super.buscarPorElemento(elemento);
 	}
 	public boolean vazia(){
 		return super.vazia();
 	}
+	
 }

@@ -11,7 +11,7 @@ public class PilhaListaEncadeada<T> extends ListaEncadeada{
 		return true;
 		
 	}
-	public boolean desinfilerar(){
+	public boolean desinfilerar(){	
 		return false;
 	}
 	public boolean vazia(){
@@ -29,5 +29,4 @@ public class PilhaListaEncadeada<T> extends ListaEncadeada{
 	public int verExistencia(T elemento) throws Exception{
 		return super.verificarExistencia(elemento);
 	}
-	
 }
