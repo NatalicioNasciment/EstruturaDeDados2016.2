@@ -11,7 +11,7 @@ public class ListaEncadeada<T> {
 	}
 
 	public boolean adiciona(T elemento) {
-		if(vazia()){
+		if (vazia()) {
 			this.primeira = new Celula<T>();
 			this.ultima = this.primeira;
 			Celula<T> aux = new Celula<T>();
@@ -21,7 +21,7 @@ public class ListaEncadeada<T> {
 			this.ultima = aux;
 			this.tamLista++;
 			return true;
-		}else{
+		} else {
 			Celula<T> aux = new Celula<T>();
 			aux.setElemento(elemento);
 			aux.setProx(null);
@@ -41,7 +41,29 @@ public class ListaEncadeada<T> {
 	}
 
 	public T busca(int posicao) throws Exception {
-		return (T) this.pegaCelula(posicao).getElemento();
+		// return (T) this.pegaCelula(posicao).getElemento();
+		if (posicao < 0 || posicao > this.tamLista) {
+			throw new Exception("Posicao invalida");
+		} else {
+			Celula<T> aux = this.primeira.getProx();
+			for (int i = 0; i < this.tamLista; i++) {
+				if (i == posicao) {
+					return aux.getElemento();
+				}
+				aux = aux.getProx();
+			}
+		}
+		return null;
+	}
+
+	public int busca(T elemento) throws Exception {
+		Celula<T> aux = this.primeira.getProx();
+		for (int i = 0; i < this.tamLista; i++) {
+			if(aux.getElemento().equals(elemento)){
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public void removeDoInicio() {
@@ -92,7 +114,7 @@ public class ListaEncadeada<T> {
 
 	public String toString() {
 		if (vazia()) {
-			return "A lista está vazia!";
+			return "[]";
 		} else {
 			Celula<T> aux = this.primeira.getProx();
 			StringBuilder s = new StringBuilder();
@@ -114,18 +136,18 @@ public class ListaEncadeada<T> {
 		if (posicao < 0 || posicao > this.tamLista) {
 			throw new Exception("Posicao inexistente");
 		} else {
-			Celula atual = this.primeira;
+			Celula atual = this.primeira.getProx();
 			for (int i = 0; i <= posicao; i++) {
 				if (i == posicao) {
-					atual = atual.getProx();
 					atual = (Celula) atual.getElemento();
-					break;
+					return atual;
 				}
-				return atual;
+				atual = atual.getProx();
 			}
+			return null;
 
 		}
-		return primeira;
+		// return primeira;
 	}
 
 	public void listar() {
@@ -146,5 +168,6 @@ public class ListaEncadeada<T> {
 	public void esvaziar() {
 		this.primeira = null;
 		this.ultima = primeira;
+		tamLista = 0;
 	}
 }
