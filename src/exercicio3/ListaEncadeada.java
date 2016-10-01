@@ -11,11 +11,18 @@ public class ListaEncadeada<T> {
 	}
 
 	public boolean adiciona(T elemento) {
-		if (vazia()) {
-			this.adicionaNoInicio(elemento);
+		if(vazia()){
+			this.primeira = new Celula<T>();
+			this.ultima = this.primeira;
+			Celula<T> aux = new Celula<T>();
+			aux.setElemento(elemento);
+			aux.setProx(null);
+			this.ultima.setProx(aux);
+			this.ultima = aux;
+			this.tamLista++;
 			return true;
-		} else {
-			Celula aux = new Celula(elemento);
+		}else{
+			Celula<T> aux = new Celula<T>();
 			aux.setElemento(elemento);
 			aux.setProx(null);
 			this.ultima.setProx(aux);
@@ -37,25 +44,25 @@ public class ListaEncadeada<T> {
 		return (T) this.pegaCelula(posicao).getElemento();
 	}
 
-	// public void removeDoInicio() {
-	// this.primeira = this.primeira.getProx();
-	// this.totalElementos--;
-	// if (this.totalElementos == 0) {
-	// this.ultima = null;
-	// }
-	// }
-	//
-	// public void removeDoFim() throws Exception {
-	// if (this.totalElementos == 1) {
-	// this.removeDoInicio();
-	// } else {
-	// Celula penultima = this.pegaCelula(totalElementos - 1);
-	// Celula aux = penultima.getProx();
-	// ultima = penultima;
-	// this.totalElementos--;
-	// }
-	// }
-	//
+	public void removeDoInicio() {
+		this.primeira = this.primeira.getProx();
+		this.tamLista--;
+		if (this.tamLista == 0) {
+			this.ultima = null;
+		}
+	}
+
+	public void removeDoFim() throws Exception {
+		if (this.tamLista == 1) {
+			this.removeDoInicio();
+		} else {
+			Celula penultima = this.pegaCelula(tamLista - 1);
+			Celula aux = penultima.getProx();
+			ultima = penultima;
+			this.tamLista--;
+		}
+	}
+
 	public int tamanho() {
 		return this.tamLista;
 	}
@@ -70,17 +77,17 @@ public class ListaEncadeada<T> {
 		}
 		return false;
 	}
-	
-	public int verificarExistencia(T elemento) throws Exception{
+
+	public int verificarExistencia(T elemento) throws Exception {
 		Celula atual = this.primeira.getProx();
-		for (int i = 0; i< this.tamLista; i++) {
+		for (int i = 0; i < this.tamLista; i++) {
 			if (atual.getElemento().equals(elemento)) {
 				return i;
 			}
 			atual = atual.getProx();
 		}
 		throw new Exception("Erro");
-//		return -1;
+		// return -1;
 	}
 
 	public String toString() {
@@ -123,8 +130,8 @@ public class ListaEncadeada<T> {
 
 	public void listar() {
 		Celula<T> aux = this.primeira.getProx();
-		for (int i = 0; i < this.tamLista -1; i++) {
-			System.out.println("[" +aux.getElemento());
+		for (int i = 0; i < this.tamLista - 1; i++) {
+			System.out.println("[" + aux.getElemento());
 			aux = aux.getProx();
 		}
 	}
@@ -135,7 +142,8 @@ public class ListaEncadeada<T> {
 		}
 		return false;
 	}
-	public void esvaziar(){
+
+	public void esvaziar() {
 		this.primeira = null;
 		this.ultima = primeira;
 	}
