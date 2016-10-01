@@ -5,8 +5,13 @@ public class TestFilaListaEncadeada {
 		FilaListaEncadeada<String> fle = new FilaListaEncadeada<>();
 		fle.enfilerar("Natalicio");
 		fle.enfilerar("Daniele");
+		fle.enfilerar("Gerlane");
+		fle.enfilerar("Assis");
+		fle.enfilerar("Nataliano");
+		System.out.println(fle);
 		fle.desenfilerar();
 		System.out.println(fle);
+		
 		
 	}
 

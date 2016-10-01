@@ -15,7 +15,7 @@ public class FilaListaEncadeada<T> extends ListaEncadeada<T> {
 		return super.adiciona(elemento);
 	}
 	public void desenfilerar() throws Exception{
-		super.removeDoFim();
+		super.removeDoInicio();
 	}
 	
 	
