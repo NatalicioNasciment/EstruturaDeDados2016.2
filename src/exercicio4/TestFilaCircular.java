@@ -6,8 +6,8 @@ public class TestFilaCircular {
 		fc.enfilerar(3);
 		fc.enfilerar(3);
 		fc.enfilerar(3);
-		fc.enfilerar(3);
 		fc.listar();
+		System.out.println("A quantidade de elemento: " + fc.quantElemento());
 		System.out.println("----------------");
 		fc.desenfilerar();
 		fc.listar();
