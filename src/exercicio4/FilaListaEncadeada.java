@@ -10,7 +10,6 @@ public class FilaListaEncadeada<T> extends ListaEncadeada<T> {
 	public FilaListaEncadeada() {
 		super();
 	}
-	
 	public boolean enfilerar(T elemento){
 		return super.adiciona(elemento);
 	}
