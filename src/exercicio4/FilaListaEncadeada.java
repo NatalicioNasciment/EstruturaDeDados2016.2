@@ -16,7 +16,19 @@ public class FilaListaEncadeada<T> extends ListaEncadeada<T> {
 	public void desenfilerar() throws Exception{
 		super.removeDoInicio();
 	}
-	
-	
-
+	public T busca(int posicao) throws Exception{
+		return super.busca(posicao);
+	}
+	public int busca(T elemento) throws Exception {
+		return super.busca(elemento);
+	}
+	public int tamanhoLista(){
+		return super.tamanho();
+	}
+	public boolean vazia(){
+		return super.vazia();
+	}
+	public void limpar(){
+		super.esvaziar();
+	}
 }
