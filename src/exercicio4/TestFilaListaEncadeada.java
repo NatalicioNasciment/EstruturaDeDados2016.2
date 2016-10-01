@@ -8,9 +8,12 @@ public class TestFilaListaEncadeada {
 		fle.enfilerar("Gerlane");
 		fle.enfilerar("Assis");
 		fle.enfilerar("Nataliano");
+		System.out.println("--------------------------------------------");
 		System.out.println(fle);
+		System.out.println("--------------------------------------------");
 		fle.desenfilerar();
 		System.out.println(fle);
+		System.out.println("--------------------------------------------");
 		
 		
 	}
