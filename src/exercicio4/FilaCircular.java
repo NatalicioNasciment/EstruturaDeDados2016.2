@@ -18,6 +18,9 @@ public class FilaCircular<T> {
 		this.itens[tras] = item;
 		this.tras = (tras + 1) % tam;
 	}
+	public void so(){
+		
+	}
 /*
 	public void desenfilerar() throws Exception {
 		if (vazia()) {
