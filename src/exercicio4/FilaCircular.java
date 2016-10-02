@@ -2,10 +2,10 @@ package exercicio4;
 
 public class FilaCircular<T> {
 	private T[] itens;
+	private T[] novosItens;
 	private int frente;
 	private int tras;
 	private int tam;
-	private T[] novosItens;
 
 	public FilaCircular(int tam) {
 		this.itens = (T[]) new Object[this.tam = tam];
@@ -18,55 +18,44 @@ public class FilaCircular<T> {
 		this.itens[tras] = item;
 		this.tras = (tras + 1) % tam;
 	}
-	public void so(){
-		
-	}
-/*
-	public void desenfilerar() throws Exception {
-		if (vazia()) {
-			throw new Exception("Fila vazia!!!");
-		} else {
-			T item = itens[this.frente];
-			this.frente = (this.frente + 1) % tam;
-			this.itens[this.tras - 1] = null;
-		}
-	}
-	*/
-	
+	/*
+	 * public void desenfilerar() throws Exception { if (vazia()) { throw new
+	 * Exception("Fila vazia!!!"); } else { T item = itens[this.frente];
+	 * this.frente = (this.frente + 1) % tam; this.itens[this.tras - 1] = null;
+	 * } }
+	 */
+
 	public T desenfilerar() throws Exception {
-		if (vazia()) {
-			throw new Exception("Fila vazia!!!");
-		} else {
-			T item = itens[this.frente];
-			this.itens[this.frente] = null;
-			this.frente = (this.frente + 1) % tam;
-			return item;
-		}
+		 if (vazia()) {
+		 throw new Exception("Fila vazia!!!");
+		 } else {
+		 T item = itens[this.frente];
+		this.itens[this.frente] = null;
+		this.frente = (this.frente + 1) % tam;
+		 return item;
+	}
 	}
 
 	public void listar() {
+		System.out.print("[");
 		for (int i = 0; i < this.tam; i++) {
 			if (itens[i] != null) {
-				System.out.print("[" + itens[i] + "]");
+				System.out.print(itens[i]);
+				System.out.print(", ");
 			}
 		}
+			System.out.println("]");
+		
 	}
 
 	public int quantElemento() {
 		int cont = 0;
-		if (this.tras > this.frente) {
-			for (int i = this.frente; this.frente <= this.tras; this.frente++) {
+		for (int i = 0; i < this.itens.length; i++) {
+			if (itens[i] != null) {
 				cont++;
-
 			}
-			return cont;
-		} else {
-			for (int i = this.tras; this.tras <= this.frente; i++) {
-				cont++;
-
-			}
-			return cont;
 		}
+		return cont;
 	}
 
 	private void redimensionar() {
@@ -84,7 +73,7 @@ public class FilaCircular<T> {
 	}
 
 	public boolean vazia() {
-		return this.frente == this.tras;
+		return this.quantElemento() == 0;
 	}
 
 	public boolean cheia() {
