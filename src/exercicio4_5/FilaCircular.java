@@ -14,7 +14,7 @@ public class FilaCircular<T> {
 	}
 
 	public void enfilerar(T item) throws Exception {
-		redimensionar();
+		aumentaCapacidade();
 		this.itens[tras] = item;
 		this.tras = (tras + 1) % tam;
 	}
@@ -32,6 +32,7 @@ public class FilaCircular<T> {
 			T item = itens[this.frente];
 			this.itens[this.frente] = null;
 			this.frente = (this.frente + 1) % tam;
+			diminuirCapacidade();
 			return item;
 		}
 	}
@@ -50,7 +51,7 @@ public class FilaCircular<T> {
 
 	public int quantElemento() {
 		int quant = 0;
-		if(this.tras > this.frente){
+		if (this.tras > this.frente) {
 			quant = this.tras - this.frente;
 			return quant;
 		}
@@ -58,7 +59,7 @@ public class FilaCircular<T> {
 		return quant;
 	}
 
-	private void redimensionar() {
+	private void aumentaCapacidade() {
 
 		if (this.tras + 1 == this.tam) {
 			novosItens = (T[]) new Object[2 * tam];
@@ -69,6 +70,18 @@ public class FilaCircular<T> {
 			this.frente = 0;
 			this.tras = quantElemento();
 			this.tam = 2 * this.tam;
+		}
+
+	}
+
+	private void diminuirCapacidade() {
+		if (quantElemento() <= this.itens.length / 2) {
+			tam = (int) (this.itens.length * (0.75));
+			novosItens = (T[]) new Object[tam];
+			for (int i = 0; i < tam; i++) {
+				this.novosItens[i] = this.itens[i];
+			}
+			this.itens = novosItens;
 		}
 	}
 

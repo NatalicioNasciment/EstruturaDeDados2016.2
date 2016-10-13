@@ -66,7 +66,7 @@ public class ListaEncadeada<T> {
 		return -1;
 	}
 
-	public void removeDoInicio() {
+	public void remove() {
 		this.primeira = this.primeira.getProx();
 		this.tamLista--;
 		if (this.tamLista == 0) {
@@ -76,7 +76,7 @@ public class ListaEncadeada<T> {
 
 	public void removeDoFim() throws Exception {
 		if (this.tamLista == 1) {
-			this.removeDoInicio();
+			this.remove();
 		} else {
 			Celula penultima = this.pegaCelula(tamLista - 1);
 			Celula aux = penultima.getProx();

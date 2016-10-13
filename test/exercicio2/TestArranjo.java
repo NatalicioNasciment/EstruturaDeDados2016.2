@@ -5,8 +5,8 @@ public class TestArranjo {
 //		ListaComArranjo arranjo = new ListaComArranjo(2);
 		ListaComArranjo<String> arranjo = new ListaComArranjo<>(2);
 		
-		arranjo.adicionar("Natlaicio");
-		arranjo.adicionar("Andinha");
+//		arranjo.adicionar("Natlaicio");
+//		arranjo.adicionar("Andinha");
 //		arranjo.adicionar("Todo liano");
 //		arranjo.adicionar("Nataliano");
 //		arranjo.adicionar("Assis");

@@ -1,35 +1,54 @@
 package exercicio4;
 
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import exercicio4_5.FilaCircular;
+import exercicio4_5.FilaListaEncadeada;
+
 public class TestFilaListaEncadeada {
-	public static void main(String[] args) throws Exception {
+
+	@Test
+	public void testEnfilerar() throws Exception {
 		FilaListaEncadeada<String> fle = new FilaListaEncadeada<>();
-		System.out.println(fle);
-		
-		fle.enfilerar("Natalicio");
+		fle.enfilerar("Gerlane");
 		fle.enfilerar("Daniele");
-//		fle.enfilerar("Gerlane");
-//		fle.enfilerar("Assis");
-//		fle.enfilerar("Nataliano");
-//		System.out.println("--------------------------------------------");
-//		System.out.println(fle);
-//		System.out.println("--------------------------------------------");
-		fle.desenfilerar();
-		System.out.println(fle);
-//		System.out.println("--------------------------------------------");
-//		System.out.println("O indice corresponde : " + fle.busca(0));
-//		System.out.println("--------------------------------------------");
-//		System.out.println("O Elemento corresponde ao índice  : " + fle.busca("fljfd"));
-//		System.out.println("Lista está vazia :" + fle.vazia());
-//		fle.limpar();
-//		System.out.println("--------------------------------------------");
-//		System.out.println("Lista está vazia :" + fle.vazia());
-//		System.out.println("--------------------------------------------");
-//		fle.enfilerar("Ivonete");
-//		System.out.println(fle);
-//		System.out.println("--------------------------------------------");
-//		System.out.println("O tamanho da lista eh : " + fle.tamanhoLista());
-//		
-		
+		assertEquals(2, fle.tamanho());
 	}
 
+	@Test
+	public void testDesenfilerar() throws Exception {
+
+		FilaListaEncadeada<String> fle = new FilaListaEncadeada<>();
+		fle.enfilerar("Gerlane");
+		fle.enfilerar("Daniele");
+		fle.enfilerar("Nataliano");
+		fle.enfilerar("Natalicio");
+		
+		fle.desenfilerar();
+		fle.desenfilerar();
+	
+		assertEquals(2, fle.tamanho());
+	}
+	
+	@Test
+	public void testBuscaPorIndice() throws Exception {
+
+		FilaListaEncadeada<String> fle = new FilaListaEncadeada<>();
+		fle.enfilerar("Gerlane");
+		fle.enfilerar("Daniele");
+	
+		assertEquals("Gerlane", fle.busca(0));
+	}
+	
+	@Test
+	public void testBuscaPorElemento() throws Exception {
+
+		FilaListaEncadeada<String> fle = new FilaListaEncadeada<>();
+		fle.enfilerar("Gerlane");
+		fle.enfilerar("Daniele");
+	
+		assertEquals(1, fle.busca("Daniele"));
+	}
 }

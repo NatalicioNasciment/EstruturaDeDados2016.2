@@ -19,6 +19,17 @@ public class ListaComArranjo<T> {
 		}
 		return false;
 	}
+	
+	//utilizado no metodo inverter frase
+	public boolean adicionar(String elemento) {
+		aumentaCapacidade();
+		if (this.tamanho < this.elementos.length) {
+			this.elementos[this.tamanho] = (T) elemento;
+			this.tamanho++;
+			return true;
+		}
+		return false;
+	}
 
 	public T remover(int indice) throws Exception {
 		T item = null;

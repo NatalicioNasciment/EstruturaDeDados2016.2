@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class TestPilhaListaEncadeada {
+public class TestPilhaListaArranjo {
 
 	@Test
 	public void test() {
