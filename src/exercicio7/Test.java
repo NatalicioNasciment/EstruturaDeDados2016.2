@@ -5,7 +5,7 @@ import java.util.Random;
 public class Test {
 
 	public static void main(String[] args) {
-		int n = 16000;
+		int n = 32000;
 		int x[] = new int[n];
 		Random ale = new Random();
 		for (int i = 0; i < n; i++) {
